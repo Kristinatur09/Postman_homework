@@ -70,6 +70,7 @@ pm.test("Check the status code is 200", function () {
 2. Проверка структуры json в ответе:
 ```json
 var jsonData = pm.response.json();
+
 var schema = {
     "type":"object",
     "properties":{
@@ -83,14 +84,13 @@ var schema = {
                     ]     
         },
         "u_salary_1_5_year":{"type":"int"},
-        },
         "qa_salary_after_12_months": {"type":"int"},
         "qa_salary_after_6_months": {"type":"int"},
         "start_qa_salary": {"type":"int"},
 }
 pm.test('Shema is valid',function(){
     pm.expect(tv4.validate(jsonData,schema)).to.be.true;
-})
+});
 
 ```
 
