@@ -3,7 +3,7 @@ ____
 ## **1. Необходимо залогиниться**
 ___
 + Request:
-```
+```js
 POST
 
 http://162.55.220.72:5005/login
@@ -20,7 +20,7 @@ password : test_1
 ```
 1. Приходящий токен необходимо передать во все остальные запросы:
 
-```
+```js
 var jsonData = pm.response.json();
 pm.environment.set("auth_token", jsonData.token);
 ```
@@ -30,7 +30,7 @@ ___
 
 + Request (raw json)
 
-```
+```js
 POST
 
 {
@@ -62,7 +62,7 @@ POST
 
 ## Tests:
 1) Статус код 200
-```
+```js
 pm.test("Check the status code is 200", function () {
     pm.response.to.have.status(200);
  });
@@ -95,7 +95,7 @@ pm.test('Shema is valid',function(){
 ```
 
  3. В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
-```
+```js
     var req = JSON.parse(request.data)
     pm.test("Check salary", function () {
         pm.expect(jsonData.qa_salary_after_6_months).to.eql(parseInT(req.salary*2));
@@ -103,17 +103,17 @@ pm.test('Shema is valid',function(){
         pm.expect(jsonData.person['u_salary_1_5_year']).to.eql(parseInt(req.salary*4))
     });
 ```
- 4. Достать значение из поля 'u_salary_1.5_year' и передать в поле salary запроса http://162.55.220.72:5005/get_test_user:
-```
+ 4. Достать значение из поля 'u_salary_1.5_year' и передать в поле salary запроса "http://162.55.220.72:5005/get_test_user":
+```js
     var salary_1 = jsonData.person.u_salary_1_5_year
     pm.environment.set('salary',salary_1);
 ```
 
-## **3. http://162.55.220.72:5005/new_data**
+## **3. "http://162.55.220.72:5005/new_data"**
 ___
 
 + Request:
-```
+```js
 POST
 age: 29
 
@@ -136,7 +136,7 @@ auth_token:{{auth_token}}
 ## Tests:   
 
 1. Статус код 200
-```
+```js
 pm.test("check Status code is 200", function () {
     pm.response.to.have.status(200);
 });
@@ -164,7 +164,7 @@ pm.test('Shema is valid',function(){
 });
 ```
 3. В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент:
-```
+```js
     var req = (request.data)
     pm.test("check salary", function () {
         pm.expect(jsonData.salary[0]).to.eq(parseInt(req.salary));
@@ -177,7 +177,7 @@ pm.test('Shema is valid',function(){
     });
 ```
 4. Проверить, что 2-й элемент массива salary больше 1-го и 0-го
-```
+```js
 pm.test("check salary [2]>salary[0]", function () {
     pm.expect(1*(jsonData.salary[2])).to.above(parseInt(jsonData.salary[0]));
 });
@@ -186,10 +186,10 @@ pm.test("check salary [2]>salary[1]", function () {
 });
 ```
 
-## **4. http://162.55.220.72:5005/test_pet_info**
+## **4. "http://162.55.220.72:5005/test_pet_info"**
 ___
 + Request:
-```
+```js
     POST
     age: 29
     weight: 55
@@ -209,13 +209,13 @@ ___
 ## Tests:
 
 1) Статус код 200
-```
+```js
 pm.test(" check Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 ```
 2) Проверка структуры json в ответе.
-```
+```js
 var jsonData = pm.response.json();
 var schema = {
            "type": "object",
@@ -248,7 +248,7 @@ var schema = {
         });
 ```
 3) В ответе указаны коэффициенты умножения weight, напишите тесты по проверке правильности результата перемножения на коэффициент.
-```
+```js
 var req = (request.data);
 pm.test("check weight", function () {
     pm.expect(jsonData.daily_food).to.eql(req.weight * 0.012);
@@ -258,10 +258,10 @@ pm.test("check weight", function () {
 });
 ```
 
-## **5. http://162.55.220.72:5005/get_test_user**
+## **5. "http://162.55.220.72:5005/get_test_user"**
 ____
 + Request:
-```
+```js
 POST
 
     age: 25
@@ -295,13 +295,13 @@ POST
 Tests:
 
 1) Статус код 200
-```
+```js
 pm.test("check Status code is 200", function () {
     pm.response.to.have.status(200);
 ```
 
 2) Проверка структуры json в ответе.
-```
+```js
 var jsonData = pm.response.json();
 var schema = {
 
@@ -324,7 +324,7 @@ pm.test('Shema is valid',function(){
 });    
 
 3) Проверить что занчение поля name = значению переменной name из окружения
-```
+```js
 pm.environment.get('name')
 
 pm.test("check name equal variable name", function () {
@@ -332,7 +332,7 @@ pm.test("check name equal variable name", function () {
  });
 ```
 4) Проверить что занчение поля age в ответе соответсвует отправленному в запросе значению поля age
-```
+```js
 var req = (request.data)
 
 pm.test("Check age", function () {
@@ -340,10 +340,10 @@ pm.test("Check age", function () {
 });
 ```
 
-## **6. http://162.55.220.72:5005/currency**
+## **6. "http://162.55.220.72:5005/currency"**
 ____
 + Request:
-```
+```js
     POST
 auth_token:{{auth_token}}
 ```
@@ -363,20 +363,21 @@ auth_token:{{auth_token}}
 ```
 ## Tests:
 1) Можете взять любой объект из присланного списка, используйте js random:
-```
+```js
 let resp = pm.response.json();    
+
 let curr_code = resp[Math.floor(Math.random()*resp.length)];
 ```
 В объекте возьмите Cur_ID и передать через окружение в следующий запрос:
-```
+```js
 pm.environment.set("cur_code", curr_code.Cur_ID);
 ```
 
-## **7. http://162.55.220.72:5005/curr_byn**
+## **7. "http://162.55.220.72:5005/curr_byn"**
 ___
 
 + Request:
-```
+```js
 POST
 auth_token: {{auth_token}}
 curr_code: 492
@@ -396,12 +397,12 @@ curr_code: 492
 
 ## Test:
 1) Статус код 200
-```
+```js
 pm.test("check Status code is 200", function () {
     pm.response.to.have.status(200);
 ```
 2) Проверка структуры json в ответе:
-```
+```js
 var jsonData = pm.response.json();
 {
   "type": "object",
