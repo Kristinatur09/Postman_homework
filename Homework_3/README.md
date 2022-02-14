@@ -6,7 +6,7 @@ ___
 ```js
 POST
 
-`http://162.55.220.72:5005/login`
+http://162.55.220.72:5005/login
 
 login : test_login
 
@@ -109,7 +109,7 @@ pm.test('Shema is valid',function(){
     pm.environment.set('salary',salary_1);
 ```
 
-## **3. http://162.55.220.72:5005/new_data**
+## **3. `http://162.55.220.72:5005/new_data`**
 ___
 
 + Request:
@@ -186,7 +186,7 @@ pm.test("check salary [2]>salary[1]", function () {
 });
 ```
 
-## **4. http://162.55.220.72:5005/test_pet_info**
+## **4. `http://162.55.220.72:5005/test_pet_info`**
 ___
 + Request:
 ```js
@@ -258,7 +258,7 @@ pm.test("check weight", function () {
 });
 ```
 
-## **5. http://162.55.220.72:5005/get_test_user**
+## **5. `http://162.55.220.72:5005/get_test_user`**
 ____
 + Request:
 ```js
@@ -340,7 +340,7 @@ pm.test("Check age", function () {
 });
 ```
 
-## **6. "http://162.55.220.72:5005/currency"**
+## **6. `http://162.55.220.72:5005/currency`**
 ____
 + Request:
 ```js
@@ -373,7 +373,7 @@ let curr_code = resp[Math.floor(Math.random()*resp.length)];
 pm.environment.set("cur_code", curr_code.Cur_ID);
 ```
 
-## **7. "http://162.55.220.72:5005/curr_byn"**
+## **7. `http://162.55.220.72:5005/curr_byn`**
 ___
 
 + Request:
