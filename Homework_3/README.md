@@ -350,16 +350,16 @@ auth_token:{{auth_token}}
 + Response: Передаётся список массив объектов.
 ```json
 [
-    {"Cur_Abbreviation": str,
+    {"Cur_Abbreviation": "str",
     "Cur_ID": int,
-    "Cur_Name": str
+    "Cur_Name": "str"
     }
     …
-    {"Cur_Abbreviation": str,
+    {"Cur_Abbreviation": "str",
     "Cur_ID": int,
-    "Cur_Name": str
+    "Cur_Name": "str"
     }
-    ]
+]
 ```
 ## Tests:
 1) Можете взять любой объект из присланного списка, используйте js random:
