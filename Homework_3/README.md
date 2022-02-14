@@ -6,7 +6,7 @@ ___
 ```js
 POST
 
-http://162.55.220.72:5005/login
+'http://162.55.220.72:5005/login'
 
 login : test_login
 
@@ -103,13 +103,13 @@ pm.test('Shema is valid',function(){
         pm.expect(jsonData.person['u_salary_1_5_year']).to.eql(parseInt(req.salary*4))
     });
 ```
- 4. Достать значение из поля 'u_salary_1.5_year' и передать в поле salary запроса "http://162.55.220.72:5005/get_test_user":
+ 4. Достать значение из поля 'u_salary_1.5_year' и передать в поле salary запроса http://162.55.220.72:5005/get_test_user:
 ```js
     var salary_1 = jsonData.person.u_salary_1_5_year
     pm.environment.set('salary',salary_1);
 ```
 
-## **3. "http://162.55.220.72:5005/new_data"**
+## **3. http://162.55.220.72:5005/new_data**
 ___
 
 + Request:
@@ -186,7 +186,7 @@ pm.test("check salary [2]>salary[1]", function () {
 });
 ```
 
-## **4. "http://162.55.220.72:5005/test_pet_info"**
+## **4. http://162.55.220.72:5005/test_pet_info**
 ___
 + Request:
 ```js
@@ -258,7 +258,7 @@ pm.test("check weight", function () {
 });
 ```
 
-## **5. "http://162.55.220.72:5005/get_test_user"**
+## **5. http://162.55.220.72:5005/get_test_user**
 ____
 + Request:
 ```js
