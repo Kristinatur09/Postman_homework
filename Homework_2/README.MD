@@ -195,8 +195,8 @@ pm.test("Check dog's name Lucky ", function () {
 ```
 12. Проверить, что параметр age имеет значение 4.
 ```js
-	var resp = jsonData.family;
-	console.log('resp = ' , resp)
+var resp = jsonData.family;
+console.log('resp = ' , resp)
 
  pm.test("Check dog's age", function () {
     pm.expect(resp.pets.dog.age).to.eql(4);
@@ -235,60 +235,60 @@ pm.test("Check age", function () {
 ```
 7. Вывести в консоль параметр salary из request.
 ```js
-	var salary = reqBody.salary
-	console.log('salary =' + salary)
+var salary = reqBody.salary
+console.log('salary =' + salary)
 ```	
 8. Вывести в консоль параметр salary из response.
 ```js
-	var salary = jsonData.salary
-	console.log('salary =' + salary)
+var salary = jsonData.salary
+console.log('salary =' + salary)
 ```
 9. Вывести в консоль 0-й элемент параметра salary из response.
 ```js
-	var salary = 1*jsonData.salary[0]
-	console.log('salary =' + salary);
+var salary = 1*jsonData.salary[0]
+console.log('salary =' + salary);
 pm.test("Your salary", function () {
     pm.expect(jsonData.salary[0]).to.eql(2000);
 });
 ```
 10. Вывести в консоль 1-й элемент параметра salary параметр salary из response:
 ```js
-	var salary = 1*jsonData.salary[1]
-	console.log('salary =' + salary);
+var salary = 1*jsonData.salary[1]
+console.log('salary =' + salary);
 
-	pm.test("Your salary", function () {
-   		pm.expect(salary).to.eql(4000);
-	});
+pm.test("Your salary", function () {
+    pm.expect(salary).to.eql(4000);
+});
 ```
 11. Вывести в консоль 2-й элемент параметра salary параметр salary из response:
 ```js
-	var salary = +jsonData.salary[2]
-	console.log('salary =' + salary)
+var salary = +jsonData.salary[2]
+console.log('salary =' + salary)
 
-	pm.test("Your salary", function () {
-   		pm.expect(salary).to.eql(6000);
-	});
+pm.test("Your salary", function () {
+   	pm.expect(salary).to.eql(6000);
+});
 ```
 12. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.):
 ```js
-	var salary = jsonData.salary[0]
-    pm.test("Check resp_salary[0]=req_salary", function () {
-   	    pm.expect(salary).to.eql (parseInt(reqBody.salary));
-    });
+var salary = jsonData.salary[0]
+pm.test("Check resp_salary[0]=req_salary", function () {
+   	pm.expect(salary).to.eql (parseInt(reqBody.salary));
+});
 ```
 13. Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.):
 ```js
-	var salary = 1*jsonData.salary[1]
-	console.log(salary)
+var salary = 1*jsonData.salary[1]
+console.log(salary)
 
-	pm.test("Check salary[1]=salary*2", function () {
-   	    pm.expect(salary).to.eql(reqBody.salary*2);
-	});
+pm.test("Check salary[1]=salary*2", function () {
+   	pm.expect(salary).to.eql(reqBody.salary*2);
+});
 ```
 14. Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.):
 ```js
-	var salary = 1*jsonData.salary[2]
-	console.log(salary)
+var salary = 1*jsonData.salary[2]
+console.log(salary)
 
 pm.test("salary[2]=salary*3", function () {
    	pm.expect(salary).to.eql(reqBody.salary*3);
@@ -304,31 +304,31 @@ pm.environment.set("name_1", name);
 ```
 16. Передать в окружение переменную age 
 ```js
-    var age = jsonData.age
-	console.log('age =' + age)
-    pm.test("set age", function () {
-   	    pm.expect(age).to.eql(29);
-    });
+var age = jsonData.age
+console.log('age =' + age)
+pm.test("set age", function () {
+   	pm.expect(age).to.eql(29);
+});
 
 pm.environment.set("age_1", age);
 ```
 17. Передать в окружение переменную salary
 ```js
-	var salary = 1*jsonData.salary[1];
-	console.log('salary =' + salary)
+var salary = 1*jsonData.salary[1];
+console.log('salary =' + salary)
 
 
-    pm.test("set salary", function () {
-   		pm.expect(salary).to.eql(4000);
-	});
+pm.test("set salary", function () {
+   	pm.expect(salary).to.eql(4000);
+});
 
-	pm.environment.set("salary_1", salary);
+pm.environment.set("salary_1", salary);
 ```
 18. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary:
 ```js
-	for (var i=0; i < salary.length; i++){
-    	console.log("salary_" + i + ":" +salary[i])
-    }	
+for (var i=0; i < salary.length; i++){
+    console.log("salary_" + i + ":" +salary[i])
+}	
 ```    
 ___
 ## `http://162.55.220.72:5005/user_info_2`
