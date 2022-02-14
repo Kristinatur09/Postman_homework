@@ -46,7 +46,7 @@ POST
 
 + Response:
 
-```Json  
+```Js 
 {
     'start_qa_salary':salary,
     'qa_salary_after_6_months': salary * 2,
@@ -124,7 +124,7 @@ name: "Kristina"
 auth_token:{{auth_token}}
 ```
 + Responce:
-```json
+```js
 {
     "name":"name",
     "age": "int(age)",
@@ -144,7 +144,7 @@ pm.test("check Status code is 200", function () {
 });
 ```
 2.  Проверка структуры json в ответе.
-```json
+```js
 var jsonData = pm.response.json();
 var schema = {
     "properties": {
@@ -202,10 +202,10 @@ ___
 + Responce:
 ```json
 {
-'name': name,
-'age': age,
-'daily_food':weight * 0.012,
-'daily_sleep': weight * 2.5
+    'name': "name",
+    'age': age,
+    'daily_food':weight * 0.012,
+    'daily_sleep': weight * 2.5
 }
 ```
 ## Tests:
@@ -273,7 +273,7 @@ POST
 
 ```
 + Responce
-```json
+```js
 
     {
     "age": "25",
@@ -350,7 +350,7 @@ ____
 auth_token:{{auth_token}}
 ```
 + Response: Передаётся список массив объектов.
-```json
+```js
 [
     {"Cur_Abbreviation": "str",
     "Cur_ID": "int",
