@@ -358,28 +358,28 @@ Body,form-data:
 ```
 5. Проверить, что json response имеет параметр start_qa_salary:
 ```js 
-	var salary = resp.start_qa_salary	
-	console.log("salary = " + salary)
-	pm.test("Your test name", function () {
-     	pm.expect(resp.start_qa_salary).to.have.property+('start_qa_salary');
-	});
+var salary = resp.start_qa_salary	
+console.log("salary = " + salary)
+pm.test("Your test name", function () {
+     pm.expect(resp.start_qa_salary).to.have.property+('start_qa_salary');
+});
 ```	
 6. Проверить, что json response имеет параметр qa_salary_after_6_months:
 ```js
-	var salary = resp.qa_salary_after_6_months	
-	console.log("salary = " + salary)
-	pm.test("Your test name", function () {
-     	pm.expect(resp.qa_salary_after_6_months).to.have.property+('qa_salary_after_6_months');
-	});
+var salary = resp.qa_salary_after_6_months	
+console.log("salary = " + salary)
+pm.test("Your test name", function () {
+     pm.expect(resp.qa_salary_after_6_months).to.have.property+('qa_salary_after_6_months');
+});
 ```    
 7. Проверить, что json response имеет параметр qa_salary_after_12_months:
 ```js
-	var salary = resp.qa_salary_after_12_months	
-	console.log("salary = " + salary)
+var salary = resp.qa_salary_after_12_months	
+console.log("salary = " + salary)
 
-	pm.test("Your test name", function () {
-     	pm.expect(resp.qa_salary_after_12_months).to.have.property+("qa_salary_after_12_months");
-	});
+pm.test("Your test name", function () {
+     pm.expect(resp.qa_salary_after_12_months).to.have.property+("qa_salary_after_12_months");
+});
 ```    
 8. Проверить, что json response имеет параметр qa_salary_after_1.5_year:
 ```js
