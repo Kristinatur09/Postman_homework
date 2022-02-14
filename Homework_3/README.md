@@ -351,12 +351,12 @@ auth_token:{{auth_token}}
 ```json
 [
     {"Cur_Abbreviation": "str",
-    "Cur_ID": int,
+    "Cur_ID": "int",
     "Cur_Name": "str"
     }
-    …
+   
     {"Cur_Abbreviation": "str",
-    "Cur_ID": int,
+    "Cur_ID": "int",
     "Cur_Name": "str"
     }
 ]
