@@ -1,4 +1,4 @@
-оздать запросы в Postman.
+Создать запросы в Postman.
 
 Protocol: http
 
