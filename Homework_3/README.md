@@ -20,7 +20,7 @@ password : test_1
 ```
 1. Приходящий токен необходимо передать во все остальные запросы:
 
-```json
+```
 var jsonData = pm.response.json();
 pm.environment.set("auth_token", jsonData.token);
 ```
@@ -45,14 +45,19 @@ POST
 
 ```Json  
 {
-    'start_qa_salary':salary,
-    'qa_salary_after_6_months': salary * 2,
-    'qa_salary_after_12_months': salary * 2.9,
-    'person': {'u_name':[user_name, salary, age],
-                                    'u_age':age,
-                                    'u_salary_1.5_year':
-                                        salary * 4}
-                                    }
+    "start_qa_salary":"salary",
+    "qa_salary_after_6_months": "salary * 2",
+    "qa_salary_after_12_months": "salary * 2.9",
+    "person": {
+                "u_name":[
+                            "user_name", 
+                            "salary", 
+                            "age"
+                        ],
+                "u_age":"age",
+                "u_salary_1.5_year": "salary * 4"
+    }
+}
 ```
 
 ## Tests:
@@ -64,9 +69,8 @@ pm.test("Check the status code is 200", function () {
 ```
 2. Проверка структуры json в ответе:
 ```json
-    var jsonData = pm.response.json();
-
-    var schema = {
+   var jsonData = pm.response.json();
+   var schema = {
 
     "type":"object",
     "properties":{
@@ -89,7 +93,7 @@ pm.test("Check the status code is 200", function () {
     }
     pm.test('Shema is valid',function(){
         pm.expect(tv4.validate(jsonData,schema)).to.be.true;
-    })
+    });
 ```
 
  3. В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
@@ -198,10 +202,10 @@ ___
 + Responce:
 ```json
 {
-'name': name,
-'age': age,
-'daily_food':weight * 0.012,
-'daily_sleep': weight * 2.5
+    'name': name,
+    'age': age,
+    'daily_food':weight * 0.012,
+    'daily_sleep': weight * 2.5
 }
 ```
 ## Tests:
@@ -383,12 +387,12 @@ curr_code: 492
 + Responce:
 ```json
 {
-    "Cur_Abbreviation": str
-    "Cur_ID": int,
-    "Cur_Name": str,
-    "Cur_OfficialRate": float,
-    "Cur_Scale": int,
-    "Date": str
+    "Cur_Abbreviation": "RON",
+    "Cur_ID": 492,
+    "Cur_Name": "Румынских леев",
+    "Cur_OfficialRate": 5.8701,
+    "Cur_Scale": 10,
+    "Date": "2022-02-14T00:00:00"
 }
 ```
 
