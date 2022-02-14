@@ -26,7 +26,7 @@ var jsonData = pm.response.json();
 pm.environment.set("auth_token", jsonData.token);
 ```
 
-## **2. http://162.55.220.72:5005/user_info**
+## **2. `http://162.55.220.72:5005/user_info`**
 ___
 
 + Request (raw json)
