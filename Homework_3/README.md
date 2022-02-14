@@ -68,7 +68,7 @@ pm.test("Check the status code is 200", function () {
  });
 ```
 2. Проверка структуры json в ответе:
-```json
+```js
 var jsonData = pm.response.json();
 
 var schema = {
