@@ -4,10 +4,10 @@ ___
 ## `http://162.55.220.72:5005/first`
 1. Отправить запрос.
 ```js
-+ Request
+ + Request
 Get
 http://162.55.220.72:5005/first
-+ Resonse
+ + Response
 This is the first responce from server!
 ```
 2. Статус код 200
