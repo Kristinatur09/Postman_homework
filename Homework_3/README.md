@@ -116,9 +116,7 @@ ___
 ```js
 POST
 age: 29
-
 salary: 1000
-
 name: "Kristina"
 
 auth_token:{{auth_token}}
@@ -200,12 +198,12 @@ ___
 
 ```
 + Responce:
-```json
+```js
 {
-    'name': "name",
-    'age': age,
-    'daily_food':weight * 0.012,
-    'daily_sleep': weight * 2.5
+    "name":"name",
+    "age":"age",
+    "daily_food":"weight * 0.012",
+    "daily_sleep":"weight * 2.5"
 }
 ```
 ## Tests:
@@ -386,15 +384,19 @@ curr_code: 492
 ```
 
 + Responce:
-```json
-{
-    "Cur_Abbreviation": str
-    "Cur_ID": int,
-    "Cur_Name": str,
-    "Cur_OfficialRate": float,
-    "Cur_Scale": int,
-    "Date": str
-}
+```js
+[
+    {
+        "Cur_Abbreviation": "str",
+        "Cur_ID": "int",
+        "Cur_Name": "str"
+    }
+    {
+        "Cur_Abbreviation": "str",
+        "Cur_ID": "int",
+        "Cur_Name": "str"
+    }
+]
 ```
 
 ## Test:
