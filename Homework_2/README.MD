@@ -2,12 +2,14 @@
 ___
 
 ## `http://162.55.220.72:5005/first`
-1. Отправить запрос.
-```js
+1. Отправить запрос:
 + Request
+```js
 Get
 http://162.55.220.72:5005/first
-+ Resonse
+```
++ Response
+```js
 This is the first responce from server!
 ```
 2. Статус код 200
@@ -122,9 +124,8 @@ ___
 
 ## `http://162.55.220.72:5005/object_info_3`
 1. Отправить запрос:
-```js
 + Request:
-
+```js
 Get http://162.55.220.72:5005/object_info_3
 Params: name:"Kris"
         age:29
