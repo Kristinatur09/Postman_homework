@@ -69,19 +69,17 @@ pm.test("Check the status code is 200", function () {
 ```
 2. Проверка структуры json в ответе:
 ```json
-   var jsonData = pm.response.json();
-   var schema = {
-
+var jsonData = pm.response.json();
+var schema = {
     "type":"object",
     "properties":{
         "person":{"type":"object"},
-        "properties":{
         "u_age": {"type":"int"},
         "u_name": {"type":"array",
                     "prefixItems": [
                     { "type": "string"},
-                    { "type":"int"},
-                    { "type":"int"},
+                    { "type":"int" },
+                    { "type":"int" },
                     ]     
         },
         "u_salary_1_5_year":{"type":"int"},
@@ -89,11 +87,11 @@ pm.test("Check the status code is 200", function () {
         "qa_salary_after_12_months": {"type":"int"},
         "qa_salary_after_6_months": {"type":"int"},
         "start_qa_salary": {"type":"int"},
-        },
-    }
-    pm.test('Shema is valid',function(){
-        pm.expect(tv4.validate(jsonData,schema)).to.be.true;
-    });
+}
+pm.test('Shema is valid',function(){
+    pm.expect(tv4.validate(jsonData,schema)).to.be.true;
+})
+
 ```
 
  3. В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
@@ -202,10 +200,10 @@ ___
 + Responce:
 ```json
 {
-    'name': name,
-    'age': age,
-    'daily_food':weight * 0.012,
-    'daily_sleep': weight * 2.5
+    "age": 23,
+    "daily_food": 0.6,
+    "daily_sleep": 125.0,
+    "name": "Kris"
 }
 ```
 ## Tests:
