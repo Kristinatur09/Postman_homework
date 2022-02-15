@@ -1,6 +1,6 @@
 # Postman_homework
 ___
-This repository stores homework on the course of Vadim Ksendzov.
+This repository stores homeworks on the course of Vadim Ksendzov.
 ## 1. **The fisrt Homework**:
 ### Send requests to the server using Get and Post methods.
 ___
