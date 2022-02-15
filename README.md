@@ -1,4 +1,4 @@
-# Postman_homework
+# Postman
 ___
 This repository contains homeworks that were made during the author's course by Vadim Ksendzov.
 
