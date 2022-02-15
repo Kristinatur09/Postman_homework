@@ -11,7 +11,7 @@ ___
 
 :small_orange_diamond: Testing status codes.
 
-    *If the response code is 200, the test will pass, otherwise it will fail*.
+    If the response code is 200, the test will pass, otherwise it will fail.
 ```js
     pm.test("Status code is 200",           function () {
         pm.response.to.have.status(200);
@@ -24,7 +24,7 @@ ___
 ```
 :small_orange_diamond:  Parsing response body data.
 
-    *To parse JSON data, use the following syntax*:
+    To parse JSON data, use the following syntax:
 ```js 
 responseJson = pm.response.json();
 ```
@@ -51,4 +51,5 @@ ___
 ### We continue to write tests in Postman. Learning Json Schema.
 *JSON Schema is a vocabulary that allows you to annotate and validate JSON documents*.
 *I used the following tool to convert Json to Json Schema*:
+
 :link: https://www.convertsimple.com/convert-json-to-json-schema/
