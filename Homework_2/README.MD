@@ -160,7 +160,7 @@ pm.test("Check age", function () {
 7. Проверить, что salary в ответе равно salary s request (salary забрать из request.)
 ```js
 pm.test("Check salary", function () {
-    pm.expect(jsonData.salary).to.eql (parseInt(reqBody.salary));
+    pm.expect(jsonData.salary).to.eql(parseInt(reqBody.salary));
 });
 ```
 8. Вывести в консоль параметр family из response.
@@ -344,17 +344,17 @@ Body,form-data:
 ```       
 2. Статус код 200
 ```js
-	pm.test("Check status code is 200", function () {
+pm.test("Check status code is 200", function () {
     	pm.response.to.have.status(200);
-	});
+});
 ```
 3. Спарсить response body в json:
 ```js
-	var resp = JSON.parse(responseBody);
+var resp = JSON.parse(responseBody);
 ```
 4. Спарсить request:
 ```js
-	var req = (request.data);
+var req = (request.data);
 ```
 5. Проверить, что json response имеет параметр start_qa_salary:
 ```js 
@@ -466,7 +466,7 @@ pm.test("1-й элемент из u_name = salary ", function () {
 var person  = resp.person
 console.log("person = " , person)
 
-pm.test("u_age = age fromrequest ", function () {
+pm.test("u_age = age from request ", function () {
     pm.expect(person.u_age).to.eql(parseInt(req.age));
 });
 ```
@@ -475,7 +475,7 @@ pm.test("u_age = age fromrequest ", function () {
 var person  = resp.person
 console.log("person = " , person)
 
-pm.test("u_salary_5_years равен salary*4.2", function () {
+pm.test("u_salary_5_years equals salary*4.2", function () {
     pm.expect(person.u_salary_5_years).to.eql(req.salary*4.2);
 });
 ```
