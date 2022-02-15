@@ -99,7 +99,7 @@ pm.test("Check the status code is 200", function () {
     var req = JSON.parse(request.data)
     pm.test("Check salary", function () {
         pm.expect(jsonData.qa_salary_after_6_months).to.eql(parseInT(req.salary*2));
-        pm.expect(jsonData.qa_salary_after_12_months).to.eq(parseInt(req.salary*2.9));
+        pm.expect(jsonData.qa_salary_after_12_months).to.eql(parseInt(req.salary*2.9));
         pm.expect(jsonData.person['u_salary_1_5_year']).to.eql(parseInt(req.salary*4))
     });
 ```
@@ -167,13 +167,13 @@ pm.test('Shema is valid',function(){
 ```js
     var req = (request.data)
     pm.test("check salary", function () {
-        pm.expect(jsonData.salary[0]).to.eq(parseInt(req.salary));
+        pm.expect(jsonData.salary[0]).to.eql(parseInt(req.salary));
     });
     pm.test("check salary*2", function () {
-        pm.expect(1*(jsonData.salary[1])).to.eq (req.salary*2);
+        pm.expect(1*(jsonData.salary[1])).to.eql(req.salary*2);
     });
     pm.test("check salary*3", function () {
-        pm.expect(1*(jsonData.salary[2])).to.eq (req.salary*3);
+        pm.expect(1*(jsonData.salary[2])).to.eql(req.salary*3);
     });
 ```
 4. Проверить, что 2-й элемент массива salary больше 1-го и 0-го
@@ -326,9 +326,9 @@ pm.test('Shema is valid',function(){
 3) Проверить что занчение поля name = значению переменной name из окружения
 ```js
 pm.environment.get('name')
-
+let reqData = request.data;
 pm.test("check name equal variable name", function () {
-    pm.expect(jsonData.name).to.eql(pm.environment.get('name'));
+    pm.expect(reqData.name).to.eql(pm.environment.get('name'));
  });
 ```
 4) Проверить что занчение поля age в ответе соответсвует отправленному в запросе значению поля age
