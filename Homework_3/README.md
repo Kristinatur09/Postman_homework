@@ -331,6 +331,7 @@ pm.test("check name equal variable name", function () {
     pm.expect(reqData.name).to.eql(pm.environment.get('name'));
  });
 ```
+
 4) Проверить что занчение поля age в ответе соответсвует отправленному в запросе значению поля age
 ```js
 var req = (request.data)
